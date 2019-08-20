@@ -16,16 +16,14 @@ def server():
     s = socket.socket()
     host = socket.gethostname()
     port = 12345
-    print(host)
     s.bind((host, port))
 
     s.listen(5)
     while True:
-        c, addr = s.accept()
-        print(type(c))
+        socker_c, addr = s.accept()
         print(addr)
-        c.send(b'hello')
-        c.close()
+        socker_c.send(b'hello')
+        socker_c.close()
 
 def client():
     s = socket.socket()
